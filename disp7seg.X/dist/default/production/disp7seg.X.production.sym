@@ -1,13 +1,13 @@
 __CFG_WRT$OFF 0 0 ABS 0
 __S0 2009 0 ABS 0
-__S1 77 0 ABS 0
+__S1 75 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
-_display7seg_init 771 0 CODE 0
+_display7seg_init 76F 0 CODE 0
 __CFG_BOR4V$BOR40V 0 0 ABS 0
-_main 7B2 0 CODE 0
+_main 7B9 0 CODE 0
 ___sp 0 0 STACK 2
 btemp 7E 0 ABS 0
 start 0 0 CODE 0
@@ -15,12 +15,12 @@ reset_vec 0 0 CODE 0
 _TRISD 88 0 ABS 0
 _PORTD 8 0 ABS 0
 wtemp0 7E 0 ABS 0
-__end_of_delay 7B2 0 CODE 0
+__end_of_delay 7B9 0 CODE 0
 __Hconfig 2009 0 CONFIG 0
 __Lconfig 2007 0 CONFIG 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
-_delay 79B 0 CODE 0
+_delay 7A2 0 CODE 0
 _vetor 20 0 BANK0 1
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
@@ -29,7 +29,7 @@ __Lcommon 0 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 ___int_sp 0 0 STACK 2
-main@cont 75 0 COMMON 1
+main@cont 73 0 COMMON 1
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
 __Hsfr0 0 0 ABS 0
@@ -42,7 +42,7 @@ __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
 __size_of_display7seg_init 0 0 ABS 0
 __size_of_delay 0 0 ABS 0
-init_fetch0 788 0 CODE 0
+init_fetch0 78F 0 CODE 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
 delay@t 70 0 COMMON 1
@@ -51,14 +51,14 @@ stacklo 0 0 ABS 0
 __Hinit 0 0 CODE 0
 __Linit 0 0 CODE 0
 __end_of_main 7EE 0 CODE 0
-__end_of_segmentos 771 0 CODE 0
+__end_of_segmentos 77F 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 __HdataBANK0 0 0 ABS 0
 __LdataBANK0 0 0 ABS 0
 __pdataBANK0 20 0 BANK0 1
 end_of_initialization 7FC 0 CODE 0
-__end_of_display7seg_init 778 0 CODE 0
+__end_of_display7seg_init 776 0 CODE 0
 __Hstrings 0 0 ABS 0
 __Lstrings 0 0 ABS 0
 __Hbank0 0 0 ABS 0
@@ -72,10 +72,10 @@ __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-_segmentos 76C 0 CODE 0
-__ptext1 76C 0 CODE 0
-__ptext2 771 0 CODE 0
-__ptext3 79B 0 CODE 0
+_segmentos 776 0 CODE 0
+__ptext1 776 0 CODE 0
+__ptext2 76F 0 CODE 0
+__ptext3 7A2 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 segmentos@x 70 0 COMMON 1
@@ -86,7 +86,7 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hspace_0 2009 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__Hspace_1 77 0 ABS 0
+__Hspace_1 75 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
@@ -98,14 +98,14 @@ __size_of_main 0 0 ABS 0
 __HidataBANK0 0 0 ABS 0
 __LidataBANK0 0 0 ABS 0
 __CFG_MCLRE$OFF 0 0 ABS 0
-__pidataBANK0 778 0 CODE 0
+__pidataBANK0 77F 0 CODE 0
 __CFG_BOREN$OFF 0 0 ABS 0
 __CFG_PWRTE$OFF 0 0 ABS 0
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
-init_ram0 78C 0 CODE 0
+init_ram0 793 0 CODE 0
 intlevel0 0 0 ENTRY 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 ENTRY 0
@@ -122,7 +122,7 @@ start_initialization 7EE 0 CODE 0
 __Hmaintext 0 0 ABS 0
 __Lmaintext 0 0 ABS 0
 __CFG_IESO$OFF 0 0 ABS 0
-__pmaintext 7B2 0 CODE 0
+__pmaintext 7B9 0 CODE 0
 __Hinittext 0 0 ABS 0
 __Linittext 0 0 ABS 0
 __initialization 7EE 0 CODE 0
@@ -134,17 +134,17 @@ __size_of_segmentos 0 0 ABS 0
 reset_vec 0 5 CODE 0 0
 cinit FDC FFF CODE FDC 0
 config 400E 4011 CONFIG 400E 0
-cstackCOMMON 70 76 COMMON 70 1
+cstackCOMMON 70 74 COMMON 70 1
 dataBANK0 20 2F BANK0 20 1
-maintext F64 FDB CODE F64 0
-text3 F36 F63 CODE F36 0
-inittext F10 F35 CODE F10 0
-idataBANK0 EF0 F0F CODE EF0 0
-text2 EE2 EEF CODE EE2 0
-text1 ED8 EE1 CODE ED8 0
+maintext F72 FDB CODE F72 0
+text3 F44 F71 CODE F44 0
+inittext F1E F43 CODE F1E 0
+idataBANK0 EFE F1D CODE EFE 0
+text1 EEC EFD CODE EEC 0
+text2 EDE EEB CODE EDE 0
 %locals
 dist/default/production\disp7seg.X.production.o
-C:\Users\20185086\AppData\Local\Temp\s9c8.
+C:\Users\20185086\AppData\Local\Temp\s3jo.
 773 7EE 0 CODE 0
 776 7EE 0 CODE 0
 817 7EE 0 CODE 0
@@ -160,48 +160,48 @@ C:\Users\20185086\AppData\Local\Temp\s9c8.
 832 7FC 0 CODE 0
 834 7FC 0 CODE 0
 835 7FD 0 CODE 0
-791 788 0 CODE 0
-792 788 0 CODE 0
-793 789 0 CODE 0
-794 78A 0 CODE 0
-795 78B 0 CODE 0
-802 78C 0 CODE 0
-803 78C 0 CODE 0
-804 791 0 CODE 0
-805 792 0 CODE 0
-806 793 0 CODE 0
-807 794 0 CODE 0
-808 795 0 CODE 0
-809 796 0 CODE 0
-810 797 0 CODE 0
-811 798 0 CODE 0
-812 799 0 CODE 0
-813 79A 0 CODE 0
+791 78F 0 CODE 0
+792 78F 0 CODE 0
+793 790 0 CODE 0
+794 791 0 CODE 0
+795 792 0 CODE 0
+802 793 0 CODE 0
+803 793 0 CODE 0
+804 798 0 CODE 0
+805 799 0 CODE 0
+806 79A 0 CODE 0
+807 79B 0 CODE 0
+808 79C 0 CODE 0
+809 79D 0 CODE 0
+810 79E 0 CODE 0
+811 79F 0 CODE 0
+812 7A0 0 CODE 0
+813 7A1 0 CODE 0
 main.c
-17 7B2 0 CODE 0
-19 7B2 0 CODE 0
-20 7B7 0 CODE 0
-22 7BA 0 CODE 0
-24 7BA 0 CODE 0
-25 7CA 0 CODE 0
-26 7D3 0 CODE 0
-27 7D9 0 CODE 0
-28 7E6 0 CODE 0
-29 7EA 0 CODE 0
-32 7EB 0 CODE 0
+14 7B9 0 CODE 0
+16 7B9 0 CODE 0
+17 7BE 0 CODE 0
+19 7C1 0 CODE 0
+21 7C1 0 CODE 0
+22 7CA 0 CODE 0
+23 7D3 0 CODE 0
+24 7D9 0 CODE 0
+25 7E6 0 CODE 0
+26 7EA 0 CODE 0
+29 7EB 0 CODE 0
 segmentos.c
-17 76C 0 CODE 0
-19 76C 0 CODE 0
-20 770 0 CODE 0
-11 771 0 CODE 0
-13 771 0 CODE 0
-14 774 0 CODE 0
-15 777 0 CODE 0
+20 776 0 CODE 0
+22 776 0 CODE 0
+23 77E 0 CODE 0
+14 76F 0 CODE 0
+16 76F 0 CODE 0
+17 772 0 CODE 0
+18 775 0 CODE 0
 delay.c
-12 79B 0 CODE 0
-14 79B 0 CODE 0
-16 79C 0 CODE 0
-17 7A3 0 CODE 0
-18 7AA 0 CODE 0
-14 7AA 0 CODE 0
-19 7B1 0 CODE 0
+12 7A2 0 CODE 0
+14 7A2 0 CODE 0
+16 7A3 0 CODE 0
+17 7AA 0 CODE 0
+18 7B1 0 CODE 0
+14 7B1 0 CODE 0
+19 7B8 0 CODE 0
