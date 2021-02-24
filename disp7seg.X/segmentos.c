@@ -19,5 +19,8 @@ PORTD = 0;
 
 void segmentos (int x) 
 {
+    if(x >= 0 && <= 15)
     PORTD = vetor [x];
+    else
+    PORTD = 0x00;
 }
