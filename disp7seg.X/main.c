@@ -17,18 +17,24 @@ void main (void)
     segment.init ();
     int cont = 0;
     char estado = 0;
-    botoes_init()
+    botoes_init();
     
     switch(estado)
     {
         case 0:
-            if(btliga() == 1)
+            if( btliga() == 1 )
                 estado = 1;
             break;
+            
         case 1: 
-            if (btliga () == 0)            
+            if ( btliga () == 0)
                 estado = 2;
-            break;        
+            break;
+            
+        case 2:
+            ++cont;
+            estado = 0;
+            break;
     }    
     segment.print ( cont );  
     
