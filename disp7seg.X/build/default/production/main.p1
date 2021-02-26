@@ -1,11 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"5 ./segmentos.h
+[v F1271 `(v ~T0 @X0 0 tf ]
+[v F1273 `(v ~T0 @X0 0 tf1`uc ]
+"8 ./segmentos.h
+[; ;./segmentos.h: 8: {
+[s S138 `*F1271 1 `*F1273 1 ]
+[n S138 display7seg_t init print ]
+"5
 [; ;./segmentos.h: 5: void display7seg_init (void);
 [v _display7seg_init `(v ~T0 @X0 0 ef ]
 "4
-[; ;./segmentos.h: 4: void segmentos (int x);
-[v _segmentos `(v ~T0 @X0 0 ef1`i ]
+[; ;./segmentos.h: 4: void segmentos (char c);
+[v _segmentos `(v ~T0 @X0 0 ef1`uc ]
+[p mainexit ]
+"352 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "4 ./delay.h
 [; ;./delay.h: 4: void delay (unsigned int t );
 [v _delay `(v ~T0 @X0 0 ef1`ui ]
@@ -267,51 +276,62 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x BOR4V = BOR40V ]
 "22
 [p x WRT = OFF ]
+"11 ./segmentos.h
+[; ;./segmentos.h: 11: } segment = { display7seg_init , segmentos };
+[v _segment `S138 ~T0 @X0 1 e ]
+[i _segment
+:U ..
+:U ..
+&U _display7seg_init
+&U _segmentos
+..
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"14 main.c
-[; ;main.c: 14: void main (void)
+"15 main.c
+[; ;main.c: 15: void main (void)
 [v _main `(v ~T0 @X0 1 ef ]
-"15
-[; ;main.c: 15: {
+"16
+[; ;main.c: 16: {
 {
 [e :U _main ]
 [f ]
-"16
-[; ;main.c: 16:     display7seg_init();
-[e ( _display7seg_init ..  ]
 "17
-[; ;main.c: 17:     int cont = 0;
+[; ;main.c: 17:     segment.init ();
+[e ( *U . _segment 0 ..  ]
+"18
+[; ;main.c: 18:     int cont = 0;
 [v _cont `i ~T0 @X0 1 a ]
 [e = _cont -> 0 `i ]
-"19
-[; ;main.c: 19:     while(1)
-[e :U 140 ]
 "20
-[; ;main.c: 20:     {
-{
-"21
-[; ;main.c: 21:        segmentos ( cont );
-[e ( _segmentos (1 _cont ]
-"22
-[; ;main.c: 22:        delay(1000);
-[e ( _delay (1 -> -> 1000 `i `ui ]
-"23
-[; ;main.c: 23:        cont++;
-[e ++ _cont -> 1 `i ]
-"24
-[; ;main.c: 24:        if (cont >= 16)
-[e $ ! >= _cont -> 16 `i 142  ]
-"25
-[; ;main.c: 25:            cont = 0;
-[e = _cont -> 0 `i ]
-[e :U 142 ]
-"26
-[; ;main.c: 26:     }
-}
-[e :U 139 ]
-[e $U 140  ]
+[; ;main.c: 20:     while(1)
 [e :U 141 ]
+"21
+[; ;main.c: 21:     {
+{
+"22
+[; ;main.c: 22:        segment.print ( cont );
+[e ( *U . _segment 1 (1 -> _cont `uc ]
+"24
+[; ;main.c: 24:        PORTD = cont;
+[e = _PORTD -> _cont `uc ]
+"26
+[; ;main.c: 26:        if (cont >= 8 )
+[e $ ! >= _cont -> 8 `i 143  ]
+"27
+[; ;main.c: 27:            delay(1000);
+[e ( _delay (1 -> -> 1000 `i `ui ]
+[e :U 143 ]
+"28
+[; ;main.c: 28:            cont++;
+[e ++ _cont -> 1 `i ]
 "29
-[; ;main.c: 29: }
-[e :UE 138 ]
+[; ;main.c: 29:     }
+}
+[e :U 140 ]
+[e $U 141  ]
+[e :U 142 ]
+"30
+[; ;main.c: 30: }
+[e :UE 139 ]
 }

@@ -13,35 +13,66 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "12 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]
-"14 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
+"15 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"14 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
+"15 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
 [v _display7seg_init display7seg_init `(v  1 e 1 0 ]
-"20
+"22
 [v _segmentos segmentos `(v  1 e 1 0 ]
-"352 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[s S24 display7seg_t 2 `*.27(v 1 init 1 0 `*.27(v 1 print 1 1 ]
+"11 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X/segmentos.h
+[v _segment segment `S24  1 e 2 0 ]
+"228 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-"1602
-[v _TRISD TRISD `VEuc  1 e 1 @136 ]
-"11 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
+[s S92 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S101 . 1 `S92 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES101  1 e 1 @8 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S71 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1619
+[u S80 . 1 `S71 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES80  1 e 1 @136 ]
+"3449
+[v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
+"12 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
 [v _vetor vetor `[16]uc  1 e 16 0 ]
-"14 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
+"15 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
 [v _main main `(v  1 e 1 0 ]
-{
-"17
-[v main@cont cont `i  1 a 2 3 ]
-"29
-} 0
-"20 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
-[v _segmentos segmentos `(v  1 e 1 0 ]
-{
-[v segmentos@x x `i  1 p 2 0 ]
-"23
-} 0
-"14
-[v _display7seg_init display7seg_init `(v  1 e 1 0 ]
 {
 "18
+[v main@cont cont `i  1 a 2 4 ]
+"30
+} 0
+"22 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
+[v _segmentos segmentos `(v  1 e 1 0 ]
+{
+[v segmentos@x x `uc  1 p 1 0 ]
+"28
+} 0
+"15
+[v _display7seg_init display7seg_init `(v  1 e 1 0 ]
+{
+"20
 } 0
 "12 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\delay.c
 [v _delay delay `(v  1 e 1 0 ]

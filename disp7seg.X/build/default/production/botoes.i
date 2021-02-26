@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "botoes.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "botoes.c" 2
 
 
 
@@ -2499,77 +2499,22 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "main.c" 2
-
-# 1 "./config.h" 1
+# 9 "botoes.c" 2
 
 
 
-
-
-
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = ON
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 10 "main.c" 2
-
-# 1 "./delay.h" 1
-
-
-
-void delay (unsigned int t );
-# 11 "main.c" 2
-
-# 1 "./segmentos.h" 1
-
-
-
-void segmentos (char c);
-void display7seg_init (void);
-
-struct display7seg_t
+void botoes_init (void)
 {
-    void (*init) (void);
-    void (*print) (char c);
-} segment = { display7seg_init , segmentos };
-# 12 "main.c" 2
+    TRISDbits.TRISD0 = 1;
+    TRISDbits.TRISD1 = 1;
+}
 
-# 1 "./botoes.h" 1
-
-
-
-void botoes_init (void);
-int B1 (void);
-int B2 (void);
-# 13 "main.c" 2
-
-
-void main (void)
+char btliga (void)
 {
-    segment.init ();
-    int cont = 0;
+    return(PORTDbits.RD1);
+}
 
-    while(1)
-    {
-       segment.print ( cont );
-
-       PORTD = cont;
-
-       if (cont >= 8 )
-           delay(1000);
-           cont++;
-    }
+char btdesliga (void)
+{
+     return(PORTDbits.RD0);
 }
