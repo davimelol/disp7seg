@@ -1,11 +1,16 @@
 #ifndef BOTOES_H
 #define BOTOES_H
 
-void botoes_init (void);
-int B1 (void);
-int B2 (void);
+void botoes_init    (void);
+char btliga         (void);
+char btdesliga      (void);
 
-#define btliga  PORTDbits.RD1;  
-#define btdesliga  PORTDbits.RD0;
+struct botao_t
+{
+     void (*init)(void);
+     char (*on)  (void);
+     char (*off) (void);
+    
+} button = { botoes_init , btliga , btdesliga };
 
 #endif

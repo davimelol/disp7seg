@@ -2516,7 +2516,7 @@ void display7seg_init (void)
 void segmentos (char x)
 {
     if(x >= 0 && x <= 8)
-    PORTB = vetor [x];
+        PORTB = vetor [x];
     else
-    PORTB = 0x00;
+        PORTB = 0x00;
 }

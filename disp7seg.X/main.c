@@ -19,29 +19,37 @@ void main (void)
     char estado = 0;
     botoes_init();
     
-    switch(estado)
+    while(1)
     {
-        case 0:
-            if( btliga() == 1 )
-                estado = 1;
-            break;
-            
-        case 1: 
-            if ( btliga () == 0)
-                estado = 2;
-            break;
-            
-        case 2:
-            ++cont;
-            estado = 0;
-            break;
-    }    
-    segment.print ( cont );  
+        switch(estado)
+        {
+            case 0:
+                if( btliga() == 1 )
+                    estado = 1;
+                if(btdesliga() == 1)
+                    estado = 2;
+                break;
+            case 1:
+                if(cont >=9 )
+                ++cont;    
+                else 
+                    cont = 0;
+                    estado = 3;
+                break;
+            case 2:
+                if(cont > 0 )
+                --cont;
+                else
+                    cont = 9;
+                estado = 3;
+                break;
+        }    
+        segment.print ( cont );  
     
-    if(cont >=10 )
-        cont = 0;
+        if(cont >=10 )
+            cont = 0;
     
-    if(cont <=0 ) )
-        cont = 9;
-    
+        if(cont <=0 ) 
+            cont = 9;
+    }
 }

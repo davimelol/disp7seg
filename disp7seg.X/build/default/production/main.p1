@@ -12,12 +12,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./segmentos.h: 4: void segmentos (char c);
 [v _segmentos `(v ~T0 @X0 0 ef1`uc ]
 [p mainexit ]
-"352 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"4 ./delay.h
-[; ;./delay.h: 4: void delay (unsigned int t );
-[v _delay `(v ~T0 @X0 0 ef1`ui ]
+"4 ./botoes.h
+[; ;./botoes.h: 4: void botoes_init (void);
+[v _botoes_init `(v ~T0 @X0 0 ef ]
+"8
+[; ;./botoes.h: 8: char btliga (void);
+[v _btliga `(uc ~T0 @X0 0 ef ]
+"9
+[; ;./botoes.h: 9: char btdesliga (void);
+[v _btdesliga `(uc ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -303,35 +306,125 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 18:     int cont = 0;
 [v _cont `i ~T0 @X0 1 a ]
 [e = _cont -> 0 `i ]
+"19
+[; ;main.c: 19:     char estado = 0;
+[v _estado `uc ~T0 @X0 1 a ]
+[e = _estado -> -> 0 `i `uc ]
 "20
-[; ;main.c: 20:     while(1)
-[e :U 141 ]
-"21
-[; ;main.c: 21:     {
-{
+[; ;main.c: 20:     botoes_init();
+[e ( _botoes_init ..  ]
 "22
-[; ;main.c: 22:        segment.print ( cont );
-[e ( *U . _segment 1 (1 -> _cont `uc ]
+[; ;main.c: 22:     while(1)
+[e :U 141 ]
+"23
+[; ;main.c: 23:     {
+{
 "24
-[; ;main.c: 24:        PORTD = cont;
-[e = _PORTD -> _cont `uc ]
+[; ;main.c: 24:         switch(estado)
+[e $U 144  ]
+"25
+[; ;main.c: 25:         {
+{
 "26
-[; ;main.c: 26:        if (cont >= 8 )
-[e $ ! >= _cont -> 8 `i 143  ]
+[; ;main.c: 26:             case 0:
+[e :U 145 ]
 "27
-[; ;main.c: 27:            delay(1000);
-[e ( _delay (1 -> -> 1000 `i `ui ]
-[e :U 143 ]
+[; ;main.c: 27:                 if( btliga() == 1 )
+[e $ ! == -> ( _btliga ..  `i -> 1 `i 146  ]
 "28
-[; ;main.c: 28:            cont++;
-[e ++ _cont -> 1 `i ]
+[; ;main.c: 28:                     estado = 1;
+[e = _estado -> -> 1 `i `uc ]
+[e :U 146 ]
 "29
-[; ;main.c: 29:     }
+[; ;main.c: 29:                 if(btdesliga() == 1)
+[e $ ! == -> ( _btdesliga ..  `i -> 1 `i 147  ]
+"30
+[; ;main.c: 30:                     estado = 2;
+[e = _estado -> -> 2 `i `uc ]
+[e :U 147 ]
+"31
+[; ;main.c: 31:                 break;
+[e $U 143  ]
+"32
+[; ;main.c: 32:             case 1:
+[e :U 148 ]
+"33
+[; ;main.c: 33:                 if(cont >=9 )
+[e $ ! >= _cont -> 9 `i 149  ]
+"34
+[; ;main.c: 34:                 ++cont;
+[e =+ _cont -> 1 `i ]
+[e $U 150  ]
+"35
+[; ;main.c: 35:                 else
+[e :U 149 ]
+"36
+[; ;main.c: 36:                     cont = 0;
+[e = _cont -> 0 `i ]
+[e :U 150 ]
+"37
+[; ;main.c: 37:                     estado = 3;
+[e = _estado -> -> 3 `i `uc ]
+"38
+[; ;main.c: 38:                 break;
+[e $U 143  ]
+"39
+[; ;main.c: 39:             case 2:
+[e :U 151 ]
+"40
+[; ;main.c: 40:                 if(cont > 0 )
+[e $ ! > _cont -> 0 `i 152  ]
+"41
+[; ;main.c: 41:                 --cont;
+[e =- _cont -> 1 `i ]
+[e $U 153  ]
+"42
+[; ;main.c: 42:                 else
+[e :U 152 ]
+"43
+[; ;main.c: 43:                     cont = 9;
+[e = _cont -> 9 `i ]
+[e :U 153 ]
+"44
+[; ;main.c: 44:                 estado = 3;
+[e = _estado -> -> 3 `i `uc ]
+"45
+[; ;main.c: 45:                 break;
+[e $U 143  ]
+"46
+[; ;main.c: 46:         }
+}
+[e $U 143  ]
+[e :U 144 ]
+[e [\ -> _estado `i , $ -> 0 `i 145
+ , $ -> 1 `i 148
+ , $ -> 2 `i 151
+ 143 ]
+[e :U 143 ]
+"47
+[; ;main.c: 47:         segment.print ( cont );
+[e ( *U . _segment 1 (1 -> _cont `uc ]
+"49
+[; ;main.c: 49:         if(cont >=10 )
+[e $ ! >= _cont -> 10 `i 154  ]
+"50
+[; ;main.c: 50:             cont = 0;
+[e = _cont -> 0 `i ]
+[e :U 154 ]
+"52
+[; ;main.c: 52:         if(cont <=0 )
+[e $ ! <= _cont -> 0 `i 155  ]
+"53
+[; ;main.c: 53:             cont = 9;
+[e = _cont -> 9 `i ]
+[e :U 155 ]
+"54
+[; ;main.c: 54:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"30
-[; ;main.c: 30: }
+"55
+[; ;main.c: 55: }
 [e :UE 139 ]
 }

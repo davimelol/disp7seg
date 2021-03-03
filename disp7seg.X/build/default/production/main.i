@@ -2554,6 +2554,9 @@ struct display7seg_t
 void botoes_init (void);
 int B1 (void);
 int B2 (void);
+
+char btliga (void);
+char btdesliga (void);
 # 13 "main.c" 2
 
 
@@ -2561,15 +2564,40 @@ void main (void)
 {
     segment.init ();
     int cont = 0;
+    char estado = 0;
+    botoes_init();
 
     while(1)
     {
-       segment.print ( cont );
+        switch(estado)
+        {
+            case 0:
+                if( btliga() == 1 )
+                    estado = 1;
+                if(btdesliga() == 1)
+                    estado = 2;
+                break;
+            case 1:
+                if(cont >=9 )
+                ++cont;
+                else
+                    cont = 0;
+                    estado = 3;
+                break;
+            case 2:
+                if(cont > 0 )
+                --cont;
+                else
+                    cont = 9;
+                estado = 3;
+                break;
+        }
+        segment.print ( cont );
 
-       PORTD = cont;
+        if(cont >=10 )
+            cont = 0;
 
-       if (cont >= 8 )
-           delay(1000);
-           cont++;
+        if(cont <=0 )
+            cont = 9;
     }
 }

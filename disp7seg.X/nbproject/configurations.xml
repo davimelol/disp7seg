@@ -8,6 +8,7 @@
       <itemPath>delay.h</itemPath>
       <itemPath>segmentos.h</itemPath>
       <itemPath>botoes.h</itemPath>
+      <itemPath>contatores.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -20,6 +21,8 @@
       <itemPath>delay.c</itemPath>
       <itemPath>segmentos.c</itemPath>
       <itemPath>botoes.c</itemPath>
+      <itemPath>contatores.c</itemPath>
+      <itemPath>main 2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

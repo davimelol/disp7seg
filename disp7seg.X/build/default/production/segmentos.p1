@@ -303,14 +303,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;segmentos.c: 24:     if(x >= 0 && x <= 8)
 [e $ ! && >= -> _x `i -> 0 `i <= -> _x `i -> 8 `i 140  ]
 "25
-[; ;segmentos.c: 25:     PORTB = vetor [x];
+[; ;segmentos.c: 25:         PORTB = vetor [x];
 [e = _PORTB -> *U + &U _vetor * -> _x `ux -> -> # *U &U _vetor `ui `ux `uc ]
 [e $U 141  ]
 "26
 [; ;segmentos.c: 26:     else
 [e :U 140 ]
 "27
-[; ;segmentos.c: 27:     PORTB = 0x00;
+[; ;segmentos.c: 27:         PORTB = 0x00;
 [e = _PORTB -> -> 0 `i `uc ]
 [e :U 141 ]
 "28
