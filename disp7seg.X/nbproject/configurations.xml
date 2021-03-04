@@ -22,7 +22,6 @@
       <itemPath>segmentos.c</itemPath>
       <itemPath>botoes.c</itemPath>
       <itemPath>contatores.c</itemPath>
-      <itemPath>main 2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

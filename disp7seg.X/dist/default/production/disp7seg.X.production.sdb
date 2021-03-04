@@ -17,18 +17,31 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"15 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
+"11 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\contatores.c
+[v _contatores_init contatores_init `(v  1 e 1 0 ]
+"21
+[v _K1 K1 `(v  1 e 1 0 ]
+"25
+[v _K2 K2 `(v  1 e 1 0 ]
+"29
+[v _K3 K3 `(v  1 e 1 0 ]
+"12 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\delay.c
+[v _delay delay `(v  1 e 1 0 ]
+"16 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "15 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
 [v _display7seg_init display7seg_init `(v  1 e 1 0 ]
 "22
 [v _segmentos segmentos `(v  1 e 1 0 ]
+[s S43 botao_t 3 `*.27(v 1 init 1 0 `*.27(uc 1 on 1 1 `*.27(uc 1 off 1 2 ]
+"14 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X/botoes.h
+[v _button button `S43  1 e 3 0 ]
 [s S24 display7seg_t 2 `*.27(v 1 init 1 0 `*.27(v 1 print 1 1 ]
 "11 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X/segmentos.h
 [v _segment segment `S24  1 e 2 0 ]
 "228 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f887.h
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S99 . 1 `uc 1 RD0 1 0 :1:0 
+[s S137 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -38,11 +51,11 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S108 . 1 `S99 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES108  1 e 1 @8 ]
+[u S146 . 1 `S137 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES146  1 e 1 @8 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S78 . 1 `uc 1 TRISD0 1 0 :1:0 
+[s S116 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -52,20 +65,20 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S87 . 1 `S78 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES87  1 e 1 @136 ]
+[u S125 . 1 `S116 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES125  1 e 1 @136 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "12 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
 [v _vetor vetor `[16]uc  1 e 16 0 ]
-"15 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
+"16 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"18
-[v main@cont cont `i  1 a 2 4 ]
-"19
-[v main@estado estado `uc  1 a 1 3 ]
-"55
+"21
+[v main@estado estado `i  1 a 2 6 ]
+"22
+[v main@s s `i  1 a 2 4 ]
+"75
 } 0
 "22 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\segmentos.c
 [v _segmentos segmentos `(v  1 e 1 0 ]
@@ -77,6 +90,17 @@
 [v _display7seg_init display7seg_init `(v  1 e 1 0 ]
 {
 "20
+} 0
+"12 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\delay.c
+[v _delay delay `(v  1 e 1 0 ]
+{
+[v delay@t t `ui  1 p 2 0 ]
+"19
+} 0
+"11 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\contatores.c
+[v _contatores_init contatores_init `(v  1 e 1 0 ]
+{
+"19
 } 0
 "18 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\botoes.c
 [v _btliga btliga `(uc  1 e 1 0 ]
@@ -92,4 +116,22 @@
 [v _botoes_init botoes_init `(v  1 e 1 0 ]
 {
 "16
+} 0
+"29 C:\Users\20185086\MPLABXProjects\disp7seg\disp7seg.X\contatores.c
+[v _K3 K3 `(v  1 e 1 0 ]
+{
+[v K3@x x `i  1 p 2 0 ]
+"32
+} 0
+"25
+[v _K2 K2 `(v  1 e 1 0 ]
+{
+[v K2@x x `i  1 p 2 0 ]
+"28
+} 0
+"21
+[v _K1 K1 `(v  1 e 1 0 ]
+{
+[v K1@x x `i  1 p 2 0 ]
+"24
 } 0

@@ -1,4 +1,4 @@
-# 1 "segmentos.c"
+# 1 "contatores.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "segmentos.c" 2
+# 1 "contatores.c" 2
 
 
 
@@ -2499,24 +2499,28 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 9 "segmentos.c" 2
+# 9 "contatores.c" 2
 
 
-
-char vetor[16] = { 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F,
-0x77, 0x7C, 0x39, 0x5E, 0x79, 0x71, };
-
-void display7seg_init (void)
+void contatores_init (void)
 {
-    ANSELH = 0;
-    TRISB = 0;
-    PORTB = 0;
+    TRISDbits.TRISD2 = 0;
+    TRISDbits.TRISD3 = 0;
+    TRISDbits.TRISD4 = 0;
+    PORTDbits.RD2 = 0;
+    PORTDbits.RD3 = 0;
+    PORTDbits.RD4 = 0;
 }
 
-void segmentos (char x)
+void K1 (int x)
 {
-    if(x >= 0 && x <= 9)
-        PORTB = vetor [x];
-    else
-        PORTB = 0x00;
+    PORTDbits.RD2 = x;
+}
+void K2 (int x)
+{
+    PORTDbits.RD3 = x;
+}
+void K3 (int x)
+{
+    PORTDbits.RD4 = x;
 }

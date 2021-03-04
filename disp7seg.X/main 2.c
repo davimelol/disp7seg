@@ -18,36 +18,39 @@ void main (void)
     button.init ();
     segment.init ();
     int estado = 0;
+    int cont = 0;
     while(1)
     {
         switch (estado)
-                
+        {        
             case 0:
                 estado = 1;
                 break;
             
             case 1:
-                
-                break;
+                K1 (1);
+                K2 (1);
+                estado = 2;
+                break;      
             
             case 2:
+                cont = 3000;
+                estado = 3;
                 break;
-            
+
             case 3:
-                break;
+                K1 (1);
+                K2 (0);
+                K3 (1);
+                estado = 4;
+                    break;
             
             case 4:
-                break;
-            
-            case 5:
-                break;
-            
-            case 6:
-                break;
-            
-                    
-    }
-    
-    
+                if(button.off())
+                    K1 (0);
+                    K2 (0);
+                    K3 (0);                                         
+        }
+    }    
 }
     
